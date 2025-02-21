@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Space - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="#"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="#"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="#"><i class="fas fa-message"></i> Messages</a>
+        </div>
+        <div class="nav-profile">
+            <img src="https://ui-avatars.com/api/?name=Roberto+Sosa&background=182834&color=fff" alt="Profile" class="profile-pic">
+            <div class="profile-menu">
+                <a href="account-settings.html" class="profile-name">Roberto Sosa</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="booking-main">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>Complete Your Booking</h1>
+                <div class="space-summary">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Executive Space">
+                    <div class="space-info">
+                        <h2>Executive Meeting Space</h2>
+                        <p><i class="fas fa-location-dot"></i> Financial District</p>
+                        <p class="price">$40/hour</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-steps">
+                <!-- Date and Time Selection -->
+                <section class="booking-section">
+                    <h3>1. Select Date & Time</h3>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="bookingDate" min="" required>
+                    </div>
+                    <div class="time-slots">
+                        <label>Available Time Slots</label>
+                        <div class="slot-grid">
+                            <button class="time-slot">09:00 AM</button>
+                            <button class="time-slot">10:00 AM</button>
+                            <button class="time-slot">11:00 AM</button>
+                            <button class="time-slot">12:00 PM</button>
+                            <button class="time-slot">01:00 PM</button>
+                            <button class="time-slot">02:00 PM</button>
+                            <button class="time-slot">03:00 PM</button>
+                            <button class="time-slot">04:00 PM</button>
+                        </div>
+                    </div>
+                    <div class="duration-select">
+                        <label>Duration</label>
+                        <select id="duration">
+                            <option value="1">1 hour</option>
+                            <option value="2">2 hours</option>
+                            <option value="4">4 hours</option>
+                            <option value="8">8 hours</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Additional Services -->
+                <section class="booking-section">
+                    <h3>2. Additional Services</h3>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <input type="checkbox" id="projector">
+                            <label for="projector">
+                                <i class="fas fa-projector"></i>
+                                Projector
+                                <span class="service-price">+$10</span>
+                            </label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="catering">
+                            <label for="catering">
+                                <i class="fas fa-utensils"></i>
+                                Catering
+                                <span class="service-price">+$20/person</span>
+                            </label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="whiteboard">
+                            <label for="whiteboard">
+                                <i class="fas fa-chalkboard"></i>
+                                Whiteboard
+                                <span class="service-price">+$5</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Summary -->
+                <section class="booking-section">
+                    <h3>3. Payment Summary</h3>
+                    <div class="payment-summary">
+                        <div class="summary-item">
+                            <span>Space Rental (2 hours)</span>
+                            <span>$80.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Additional Services</span>
+                            <span>$15.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Service Fee</span>
+                            <span>$5.00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total</span>
+                            <span>$100.00</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="booking-actions">
+                    <button class="button secondary" onclick="history.back()">Cancel</button>
+                    <button class="button" onclick="confirmBooking()">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/booking.js"></script>
+</body>
+</html> 

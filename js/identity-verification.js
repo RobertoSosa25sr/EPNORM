@@ -1,60 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // For demo purposes, set default user data if none exists
-    if (!sessionStorage.getItem('pendingUser')) {
-        const defaultUser = {
-            name: "Roberto Sosa",
-            email: "roberto.sosa@epn.edu.ec",
-            phone: "+593987654321",
-            password: "admin123"
-        };
-        sessionStorage.setItem('pendingUser', JSON.stringify(defaultUser));
-    }
-
-    // Set progress bar to initial state
-    document.getElementById('verificationProgress').style.width = '50%';
+    // Set initial progress
+    document.getElementById('verificationProgress').style.width = '33%';
 });
-
-function verifyEmail() {
-    const code = document.getElementById('emailCode').value;
-    if (code.length !== 6) {
-        alert('Please enter a valid 6-digit code');
-        return;
-    }
-
-    // Move to summary
-    document.getElementById('emailStep').classList.remove('active');
-    document.getElementById('summaryStep').classList.add('active');
-    document.getElementById('verificationProgress').style.width = '100%';
-    showSummary();
-}
-
-function showSummary() {
-    // Get user data and populate summary
-    const userData = JSON.parse(sessionStorage.getItem('pendingUser'));
-    
-    document.getElementById('summaryName').textContent = userData.name;
-    document.getElementById('summaryEmail').textContent = userData.email;
-    document.getElementById('summaryPhone').textContent = userData.phone;
-}
-
-function completeRegistration() {
-    const userData = JSON.parse(sessionStorage.getItem('pendingUser'));
-    
-    // Here you would typically send the final registration data to your backend
-    alert('Registration completed successfully!');
-    sessionStorage.removeItem('pendingUser');
-    
-    // Redirect to dashboard
-    window.location.href = 'dashboard.html';
-}
-
-function goBack() {
-    window.location.href = 'index.html';
-}
-
-function resendEmailCode() {
-    alert('New verification code sent to your email');
-}
 
 function setupDocumentUpload() {
     const uploadArea = document.getElementById('documentUpload');
@@ -86,11 +33,35 @@ function handleDocumentFile(file) {
     }
 }
 
+function sendVerificationCode() {
+    // Here you would typically send the code to the user's phone
+    alert('Verification code sent to your phone');
+    
+    // Show the code input field and verify button
+    document.getElementById('codeGroup').style.display = 'block';
+    document.getElementById('sendCodeBtn').style.display = 'none';
+    document.getElementById('verifyCodeBtn').style.display = 'block';
+}
+
+function verifyPhoneCode() {
+    const code = document.getElementById('verificationCode').value;
+    if (code.length !== 6) {
+        alert('Please enter a valid 6-digit code');
+        return;
+    }
+
+    // Move to document verification
+    document.getElementById('phoneStep').classList.remove('active');
+    document.getElementById('documentStep').classList.add('active');
+    document.getElementById('verificationProgress').style.width = '50%';
+    setupDocumentUpload();
+}
+
 function verifyDocument() {
     // Move to face verification
     document.getElementById('documentStep').classList.remove('active');
     document.getElementById('faceStep').classList.add('active');
-    document.getElementById('verificationProgress').style.width = '66%';
+    document.getElementById('verificationProgress').style.width = '75%';
 }
 
 let stream = null;

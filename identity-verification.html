@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Verification - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/verification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">EPNORM</div>
+    </nav>
+
+    <div class="container verification-container">
+        <div class="verification-steps">
+            <!-- Phone verification step -->
+            <div class="step active" id="phoneStep">
+                <h2>Phone Verification</h2>
+                <p>We'll send a verification code to your phone</p>
+                <div class="verification-form">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phoneNumber" value="+593987654321" disabled>
+                    </div>
+                    <div class="form-group" id="codeGroup" style="display: none;">
+                        <label>Enter 6-digit Code</label>
+                        <input type="text" id="verificationCode" maxlength="6" placeholder="000000">
+                    </div>
+                    <button class="button" id="sendCodeBtn" onclick="sendVerificationCode()">Send Code</button>
+                    <button class="button" id="verifyCodeBtn" onclick="verifyPhoneCode()" style="display: none;">Verify Code</button>
+                </div>
+            </div>
+
+            <!-- Document verification step -->
+            <div class="step" id="documentStep">
+                <h2>Identity Document</h2>
+                <p>Please upload a valid government-issued ID</p>
+                <div class="verification-form">
+                    <div class="upload-area" id="documentUpload">
+                        <i class="fas fa-id-card"></i>
+                        <p>Click to upload or drag your document here</p>
+                        <span class="supported-formats">Supported formats: JPG, PNG, PDF</span>
+                        <input type="file" id="documentInput" accept="image/*,.pdf" hidden>
+                    </div>
+                    <button class="button" onclick="verifyDocument()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Face verification step -->
+            <div class="step" id="faceStep">
+                <h2>Face Verification</h2>
+                <p>Take a photo of your face for verification</p>
+                <div class="verification-form">
+                    <div class="camera-area">
+                        <video id="videoElement" autoplay playsinline hidden></video>
+                        <canvas id="photoCanvas" hidden></canvas>
+                        <div class="camera-placeholder" id="cameraPlaceholder">
+                            <i class="fas fa-camera"></i>
+                            <p>Click to take photo</p>
+                        </div>
+                    </div>
+                    <button class="button" id="cameraButton" onclick="toggleCamera()">Start Camera</button>
+                    <button class="button" id="photoButton" onclick="takePhoto()" disabled>Take Photo</button>
+                    <button class="button" onclick="verifyFace()" disabled id="continueButton">Continue</button>
+                </div>
+            </div>
+
+            <!-- Summary step -->
+            <div class="step" id="summaryStep">
+                <h2>Verification Complete</h2>
+                <p>Your identity has been verified successfully!</p>
+                <div class="verification-form">
+                    <button class="button" onclick="completeVerification()">Return to Previous Page</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress" id="verificationProgress"></div>
+        </div>
+    </div>
+
+    <script src="js/identity-verification.js"></script>
+</body>
+</html> 
