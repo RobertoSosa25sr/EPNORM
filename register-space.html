@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Space - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/register-space.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <!-- Same navigation as other pages -->
+    </nav>
+
+    <main class="register-space-main">
+        <div class="register-space-container">
+            <h1>Register Your Space</h1>
+            <p class="subtitle">Let's verify your ownership before setting up your space</p>
+
+            <div class="registration-steps">
+                <!-- Document Upload Step -->
+                <div class="step active" id="documentStep">
+                    <h2>Property Ownership Verification</h2>
+                    <p>Please upload a document that proves you own or are authorized to rent this space</p>
+                    <div class="document-section">
+                        <div class="upload-area" id="documentUpload">
+                            <i class="fas fa-file-upload"></i>
+                            <p>Click to upload or drag your document here</p>
+                            <span class="supported-formats">Supported formats: PDF, JPG, PNG</span>
+                            <input type="file" id="documentInput" accept=".pdf,image/*" hidden>
+                        </div>
+                        <div class="document-types">
+                            <h3>Accepted Documents:</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Property Deed</li>
+                                <li><i class="fas fa-check"></i> Lease Agreement</li>
+                                <li><i class="fas fa-check"></i> Authorization Letter</li>
+                                <li><i class="fas fa-check"></i> Business License</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="button secondary" onclick="window.location.href='my-spaces.html'">Cancel</button>
+                        <button class="button" onclick="verifyDocument()" disabled id="verifyButton">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Basic Information Step -->
+                <div class="step" id="basicInfoStep">
+                    <h2>Basic Space Information</h2>
+                    <p>Please provide some basic details about your space</p>
+                    <div class="form-group">
+                        <label>Space Name</label>
+                        <input type="text" placeholder="e.g., Modern Downtown Office">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" placeholder="Street Address">
+                        <input type="text" placeholder="City">
+                        <div class="address-grid">
+                            <input type="text" placeholder="State">
+                            <input type="text" placeholder="ZIP Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Space Type</label>
+                        <select>
+                            <option value="">Select Type</option>
+                            <option value="office">Office Space</option>
+                            <option value="meeting">Meeting Room</option>
+                            <option value="studio">Studio</option>
+                            <option value="event">Event Space</option>
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button class="button secondary" onclick="window.location.href='my-spaces.html'">Cancel</button>
+                        <button class="button" onclick="submitRegistration()">Register Space</button>
+                    </div>
+                </div>
+
+                <!-- Success Step -->
+                <div class="step" id="successStep">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Registration Successful!</h2>
+                        <p>Your space is being reviewed by our team. Be patient and wait for approval.</p>
+                        <div class="button-group">
+                            <button class="button secondary" onclick="window.location.href='my-spaces.html'">Return to My Spaces</button>
+                            <button class="button" onclick="window.location.href='dashboard.html'">Return to Home</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/register-space.js"></script>
+</body>
+</html> 

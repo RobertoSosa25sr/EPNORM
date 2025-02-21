@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spaces - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/my-spaces.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="my-spaces.html" class="active"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="#"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="#"><i class="fas fa-message"></i> Messages</a>
+        </div>
+        <div class="nav-profile">
+            <img src="https://ui-avatars.com/api/?name=Roberto+Sosa&background=182834&color=fff" alt="Profile" class="profile-pic">
+            <div class="profile-menu">
+                <a href="account-settings.html" class="profile-name">Roberto Sosa</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="my-spaces-main">
+        <div class="my-spaces-header">
+            <h1>My Spaces</h1>
+            <button class="button" onclick="window.location.href='register-space.html'">
+                <i class="fas fa-plus"></i> Register New Space
+            </button>
+        </div>
+
+        <div class="spaces-tabs">
+            <button class="tab active" onclick="showTab('registered')">Registered</button>
+            <button class="tab" onclick="showTab('published')">Published</button>
+            <button class="tab" onclick="showTab('pending')">Pending Verification</button>
+            <button class="tab" onclick="showTab('draft')">Drafts</button>
+        </div>
+
+        <div class="spaces-container">
+            <!-- Registered Spaces -->
+            <div class="tab-content active" id="registered">
+                <div class="space-card registered">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Space">
+                        <span class="status">Approved</span>
+                    </div>
+                    <div class="space-details">
+                        <h3>Modern Downtown Office</h3>
+                        <p class="location"><i class="fas fa-location-dot"></i> Financial District</p>
+                        <p class="status-message">
+                            <i class="fas fa-check-circle"></i> Ready to publish
+                        </p>
+                        <button class="button" onclick="window.location.href='publish-space.html'">Publish Space</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Published Spaces -->
+            <div class="tab-content" id="published">
+                <div class="empty-state">
+                    <i class="fas fa-building"></i>
+                    <h2>No Published Spaces</h2>
+                    <p>Start by registering your first space</p>
+                    <button class="button" onclick="window.location.href='register-space.html'">Register Space</button>
+                </div>
+            </div>
+
+            <!-- Pending Verification -->
+            <div class="tab-content" id="pending">
+                <div class="space-card pending">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Space">
+                        <span class="status">Pending Verification</span>
+                    </div>
+                    <div class="space-details">
+                        <h3>Modern Downtown Office</h3>
+                        <p class="location"><i class="fas fa-location-dot"></i> Financial District</p>
+                        <p class="status-message">
+                            <i class="fas fa-clock"></i> Document verification in progress
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drafts -->
+            <div class="tab-content" id="draft">
+                <div class="empty-state">
+                    <i class="fas fa-file"></i>
+                    <h2>No Draft Spaces</h2>
+                    <p>Your unfinished space registrations will appear here</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/my-spaces.js"></script>
+</body>
+</html> 
