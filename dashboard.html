@@ -47,9 +47,11 @@
                 <a href="my-spaces.html" class="card-link"></a>
             </div>
             <div class="action-card">
-                <i class="fas fa-history"></i>
-                <h3>My Activity</h3>
-                <p>View bookings and listings</p>
+                <div onclick="toggleActivity()">
+                    <i class="fas fa-history"></i>
+                    <h3>My Activity</h3>
+                    <p>View bookings and listings</p>
+                </div>
             </div>
         </section>
 
@@ -102,13 +104,61 @@
         </div>
     </main>
 
+    <!-- Activity Modal -->
+    <div id="activityModal" class="activity-modal">
+        <div class="activity-content">
+            <div class="activity-header">
+                <h2>Recent Activity</h2>
+                <button onclick="hideActivity()" class="close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon booking">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h4>New Booking Confirmed</h4>
+                        <p>Modern Downtown Office - Monday, May 15</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon message">
+                        <i class="fas fa-message"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h4>New Message from Jane Smith</h4>
+                        <p>Regarding your booking next week...</p>
+                        <span class="activity-time">5 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon alert">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h4>Booking Conflict Resolved</h4>
+                        <p>Double booking issue has been resolved</p>
+                        <span class="activity-time">1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // For prototype purposes only
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', () => {
-                alert('This feature is not available in the prototype');
+                // Only show alert for buttons that don't have specific functionality
+                if (!button.classList.contains('close-button')) {
+                    alert('This feature is not available in the prototype');
+                }
             });
         });
     </script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html> 

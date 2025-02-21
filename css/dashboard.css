@@ -317,4 +317,109 @@
 
 .profile-name:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Activity Modal Styles */
+.activity-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-modal.active {
+    display: flex;
+}
+
+.activity-content {
+    background: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.activity-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-blue-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-header h2 {
+    margin: 0;
+    color: var(--midnight-blue);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--dark-blue-grey);
+}
+
+.activity-list {
+    padding: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-blue-grey);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.activity-icon.booking {
+    background: rgba(31, 157, 11, 0.1);
+    color: var(--grass-green);
+}
+
+.activity-icon.message {
+    background: rgba(170, 186, 203, 0.2);
+    color: var(--midnight-blue);
+}
+
+.activity-icon.alert {
+    background: rgba(194, 84, 46, 0.1);
+    color: var(--terracotta);
+}
+
+.activity-details h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--midnight-blue);
+}
+
+.activity-details p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: var(--dark-blue-grey);
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: var(--dark-blue-grey);
 } 
