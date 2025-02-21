@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/messages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="my-spaces.html"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="my-bookings.html"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="messages.html" class="active"><i class="fas fa-message"></i> Messages</a>
+        </div>
+        <div class="nav-profile">
+            <img src="https://ui-avatars.com/api/?name=Roberto+Sosa&background=182834&color=fff" alt="Profile" class="profile-pic">
+            <div class="profile-menu">
+                <a href="account-settings.html" class="profile-name">Roberto Sosa</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="messages-main">
+        <div class="messages-container">
+            <!-- Contacts/Chats List -->
+            <div class="chats-list">
+                <div class="chats-header">
+                    <h2>Messages</h2>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search chats...">
+                    </div>
+                </div>
+
+                <div class="chats">
+                    <div class="chat-item ai-assistant" onclick="loadChat('ai')">
+                        <img src="https://ui-avatars.com/api/?name=AI+Assistant&background=1F9D0B&color=fff" alt="AI Assistant">
+                        <div class="chat-info">
+                            <div class="chat-header">
+                                <h3>EPNORM Assistant</h3>
+                                <span class="time">Now</span>
+                            </div>
+                            <div class="chat-preview">
+                                <p>I'm here to help with your bookings!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item" onclick="loadChat('1')">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe" alt="John Doe">
+                        <div class="chat-info">
+                            <div class="chat-header">
+                                <h3>John Doe</h3>
+                                <span class="time">10:30 AM</span>
+                            </div>
+                            <div class="chat-preview">
+                                <p>Sure, the space is available for that time...</p>
+                                <span class="unread-count">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item" onclick="loadChat('2')">
+                        <img src="https://ui-avatars.com/api/?name=Jane+Smith" alt="Jane Smith">
+                        <div class="chat-info">
+                            <div class="chat-header">
+                                <h3>Jane Smith</h3>
+                                <span class="time">Yesterday</span>
+                            </div>
+                            <div class="chat-preview">
+                                <p>Thanks for booking! Let me know if you need...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-contact">
+                        <img src="https://ui-avatars.com/api/?name=AI+Assistant&background=1F9D0B&color=fff" alt="AI Assistant">
+                        <div class="contact-info">
+                            <h3>EPNORM Assistant</h3>
+                            <p>AI Booking Assistant</p>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button onclick="viewBooking('12345')">
+                            <i class="fas fa-calendar"></i> View Booking
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="message-date">Today</div>
+                    
+                    <div class="message ai">
+                        <div class="assistant-header">
+                            <i class="fas fa-robot"></i> AI Assistant
+                        </div>
+                        <p>Hello! I'm your EPNORM Assistant. I monitor bookings and help ensure everything runs smoothly. How can I assist you today?</p>
+                        <span class="time">11:00 AM</span>
+                    </div>
+
+                    <div class="message sent">
+                        <p>Hi! I'm having a conflict with a booking. The host double-booked the space for next Monday.</p>
+                        <span class="time">11:05 AM</span>
+                    </div>
+
+                    <div class="message ai">
+                        <div class="assistant-header">
+                            <i class="fas fa-robot"></i> AI Assistant
+                        </div>
+                        <p>I've detected the double booking for Monday. I'll help resolve this right away:</p>
+                        <p>1. I've notified the host about the conflict
+                        <br>2. Your booking has priority as it was made first
+                        <br>3. I'll ensure the other booking is rescheduled
+                        <br>
+                        <br>Would you like me to suggest alternative spaces available for that time slot?</p>
+                        <span class="time">11:06 AM</span>
+                    </div>
+
+                    <div class="message sent">
+                        <p>No need for alternatives, I just wanted to make sure my booking is secure. Thanks!</p>
+                        <span class="time">11:07 AM</span>
+                    </div>
+
+                    <div class="message ai">
+                        <div class="assistant-header">
+                            <i class="fas fa-robot"></i> AI Assistant
+                        </div>
+                        <p>Your booking is confirmed and secure. I'll continue monitoring for any potential issues. You'll receive a notification 24 hours before your booking as a reminder.</p>
+                        <p>Is there anything else you need help with?</p>
+                        <span class="time">11:08 AM</span>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/messages.js"></script>
+</body>
+</html> 
