@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Meeting Space - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/space-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="#"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="#"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="#"><i class="fas fa-message"></i> Messages</a>
+        </div>
+        <div class="nav-profile">
+            <img src="https://ui-avatars.com/api/?name=Roberto+Sosa&background=182834&color=fff" alt="Profile" class="profile-pic">
+            <div class="profile-menu">
+                <a href="account-settings.html" class="profile-name">Roberto Sosa</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="space-details-main">
+        <div class="space-details-container">
+            <!-- Image Gallery -->
+            <div class="space-gallery">
+                <div class="main-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Executive Space">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="View 1" class="active">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2" alt="View 2">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="View 3">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="View 4">
+                </div>
+            </div>
+
+            <!-- Space Information -->
+            <div class="space-info">
+                <div class="space-header">
+                    <div class="space-title">
+                        <h1>Executive Meeting Space</h1>
+                        <p class="location"><i class="fas fa-location-dot"></i> Financial District</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (24 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="space-price">
+                        <span class="price">$40</span>/hour
+                        <button class="button" onclick="window.location.href='booking.html'">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="space-features">
+                    <h2>Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <span>Up to 12 people</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tv"></i>
+                            <span>4K Display</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>High-speed WiFi</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-coffee"></i>
+                            <span>Coffee Machine</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Private Suite</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-temperature-low"></i>
+                            <span>AC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-description">
+                    <h2>Description</h2>
+                    <p>Modern and professional meeting space perfect for executive meetings, presentations, and team collaborations. The space features high-end amenities including a 4K display for presentations, high-speed internet, and complimentary coffee service.</p>
+                    <p>Located in the heart of the Financial District, this space offers easy access to public transportation and nearby restaurants.</p>
+                </div>
+
+                <div class="host-info">
+                    <h2>About the Host</h2>
+                    <div class="host-profile">
+                        <img src="https://ui-avatars.com/api/?name=John+Smith&background=182834&color=fff" alt="Host">
+                        <div class="host-details">
+                            <h3>John Smith</h3>
+                            <p>Member since 2022 · 45 spaces</p>
+                            <p>Response time: Usually responds within 1 hour</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions and Reviews Section -->
+            <div class="questions-reviews">
+                <div class="questions-section">
+                    <h2>Questions & Answers</h2>
+                    <div class="ask-question">
+                        <textarea placeholder="Ask a question about this space..."></textarea>
+                        <button class="button">Send Question</button>
+                    </div>
+                    <div class="questions-list">
+                        <div class="question-item">
+                            <div class="question">
+                                <img src="https://ui-avatars.com/api/?name=Maria+Garcia" alt="User">
+                                <div class="question-content">
+                                    <p class="user-name">Maria Garcia</p>
+                                    <p>Is there parking available nearby?</p>
+                                    <span class="timestamp">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="answer">
+                                <img src="https://ui-avatars.com/api/?name=John+Smith" alt="Host">
+                                <div class="answer-content">
+                                    <p class="user-name">John Smith <span class="host-badge">Host</span></p>
+                                    <p>Yes, there's a parking garage right next to the building with special rates for our guests.</p>
+                                    <span class="timestamp">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More questions... -->
+                    </div>
+                </div>
+
+                <div class="reviews-section">
+                    <h2>Reviews</h2>
+                    <div class="reviews-summary">
+                        <div class="rating-big">
+                            <span class="number">4.8</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="total">24 reviews</span>
+                        </div>
+                    </div>
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <img src="https://ui-avatars.com/api/?name=David+Lee" alt="Reviewer">
+                            <div class="review-content">
+                                <div class="review-header">
+                                    <p class="user-name">David Lee</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="review-text">Excellent space for our team meeting. The facilities were clean and modern, and the host was very accommodating.</p>
+                                <span class="timestamp">1 week ago</span>
+                            </div>
+                        </div>
+                        <!-- More reviews... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/space-details.js"></script>
+</body>
+</html> 
