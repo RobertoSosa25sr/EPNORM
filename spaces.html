@@ -131,9 +131,11 @@
                 if (button.textContent === 'Book Now') {
                     button.addEventListener('click', () => {
                         if (!isVerified) {
-                            if (confirm('Identity verification is required to book spaces. Would you like to verify your identity now?')) {
-                                window.location.href = 'account-settings.html';
-                            }
+                            alert('Identity verification is required to book spaces. Redirecting to verification page...');
+                            // Store current page URL to return after verification
+                            sessionStorage.setItem('returnTo', window.location.href);
+                            // Redirect to account settings
+                            window.location.href = 'account-settings.html';
                         } else {
                             alert('This booking feature is not available in the prototype');
                         }

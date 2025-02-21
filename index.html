@@ -153,6 +153,9 @@
             document.getElementById('loginEmail').value = "roberto.sosa@epn.edu.ec";
             document.getElementById('loginPassword').value = "admin123";
             
+            // Set verification status to false by default
+            sessionStorage.setItem('isVerified', 'false');
+            
             // Show success message and redirect
             window.location.href = 'dashboard.html';
         }
