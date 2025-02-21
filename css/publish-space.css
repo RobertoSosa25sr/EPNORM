@@ -1,0 +1,166 @@
+.publish-space-main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.publish-space-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.subtitle {
+    color: var(--dark-blue-grey);
+    margin-bottom: 2rem;
+}
+
+.publish-steps .step {
+    display: none;
+}
+
+.publish-steps .step.active {
+    display: block;
+}
+
+/* Photos Grid */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.photo-upload {
+    border: 2px dashed var(--light-blue-grey);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-upload.main-photo {
+    grid-column: span 2;
+}
+
+.photo-upload:hover {
+    border-color: var(--grass-green);
+    background: var(--antique-white);
+}
+
+.photo-upload i {
+    font-size: 2rem;
+    color: var(--dark-blue-grey);
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--midnight-blue);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--light-blue-grey);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Amenities Grid */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox input {
+    width: auto;
+    margin: 0;
+}
+
+/* Hours Grid */
+.hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.success-message i {
+    font-size: 4rem;
+    color: var(--grass-green);
+    margin-bottom: 1rem;
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button.secondary {
+    background: var(--light-blue-grey);
+    color: var(--midnight-blue);
+    transition: all 0.3s ease;
+}
+
+.button.secondary:hover {
+    background: #d1d8e0;
+    color: var(--midnight-blue);
+}
+
+@media (max-width: 768px) {
+    .publish-space-main {
+        padding: 1rem;
+    }
+
+    .photos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-upload.main-photo {
+        grid-column: auto;
+    }
+
+    .button-group {
+        flex-direction: column-reverse;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+    }
+} 

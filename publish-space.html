@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish Space - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/publish-space.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="my-spaces.html"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="my-bookings.html"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="messages.html"><i class="fas fa-message"></i> Messages</a>
+        </div>
+    </nav>
+
+    <main class="publish-space-main">
+        <div class="publish-space-container">
+            <h1>Publish Your Space</h1>
+            <p class="subtitle">Set up your space details to start receiving bookings</p>
+
+            <div class="publish-steps">
+                <!-- Details Step -->
+                <div class="step active" id="detailsStep">
+                    <h2>Space Details</h2>
+                    <p>Provide information about your space</p>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea placeholder="Describe your space, its features, and what makes it special..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Maximum Capacity</label>
+                        <input type="number" min="1" placeholder="Number of people">
+                    </div>
+                    <div class="form-group">
+                        <label>Amenities</label>
+                        <div class="amenities-grid">
+                            <label class="checkbox">
+                                <input type="checkbox"> WiFi
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Projector
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Whiteboard
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Coffee Machine
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Air Conditioning
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox"> Parking
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="button secondary" onclick="prevStep('detailsStep', 'photosStep')">Back</button>
+                        <button class="button" onclick="nextStep('detailsStep', 'pricingStep')">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Pricing Step -->
+                <div class="step" id="pricingStep">
+                    <h2>Pricing & Availability</h2>
+                    <p>Set your rates and availability</p>
+                    <div class="form-group">
+                        <label>Hourly Rate (USD)</label>
+                        <input type="number" min="1" placeholder="e.g., 40">
+                    </div>
+                    <div class="form-group">
+                        <label>Minimum Booking Duration (hours)</label>
+                        <input type="number" min="1" placeholder="e.g., 2">
+                    </div>
+                    <div class="form-group">
+                        <label>Operating Hours</label>
+                        <div class="hours-grid">
+                            <div>
+                                <label>Opening Time</label>
+                                <input type="time">
+                            </div>
+                            <div>
+                                <label>Closing Time</label>
+                                <input type="time">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="button secondary" onclick="prevStep('pricingStep', 'detailsStep')">Back</button>
+                        <button class="button" onclick="publishSpace()">Publish Space</button>
+                    </div>
+                </div>
+
+                <!-- Success Step -->
+                <div class="step" id="successStep">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Space Published!</h2>
+                        <p>Your space is now live and ready to receive bookings</p>
+                        <div class="button-group">
+                            <button class="button secondary" onclick="window.location.href='my-spaces.html'">View My Spaces</button>
+                            <button class="button" onclick="window.location.href='space-details.html'">View Space Page</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/publish-space.js"></script>
+</body>
+</html> 

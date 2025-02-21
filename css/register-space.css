@@ -150,6 +150,43 @@
     justify-content: center;
 }
 
+/* Photos Grid */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.photo-upload {
+    border: 2px dashed var(--light-blue-grey);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-upload.main-photo {
+    grid-column: span 2;
+}
+
+.photo-upload:hover {
+    border-color: var(--grass-green);
+    background: var(--antique-white);
+}
+
+.photo-upload i {
+    font-size: 2rem;
+    color: var(--dark-blue-grey);
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 768px) {
     .register-space-main {
         padding: 1rem;
@@ -161,5 +198,13 @@
 
     .button-group {
         flex-direction: column-reverse;
+    }
+
+    .photos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-upload.main-photo {
+        grid-column: auto;
     }
 } 

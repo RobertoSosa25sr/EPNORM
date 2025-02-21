@@ -63,6 +63,57 @@
                             <button class="time-slot">04:00 PM</button>
                         </div>
                     </div>
+                    <!-- Recurring Booking Options -->
+                    <div class="recurring-options">
+                        <label class="checkbox">
+                            <input type="checkbox" id="isRecurring" onchange="toggleRecurringOptions()">
+                            Make this a recurring booking
+                        </label>
+                        
+                        <div id="recurringDetails" class="recurring-details" style="display: none;">
+                            <div class="form-group">
+                                <label>Repeat</label>
+                                <select id="recurringType" onchange="updateRecurringUI()">
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                </select>
+                            </div>
+                            
+                            <div id="weeklyOptions" class="recurring-days">
+                                <label>Select Days:</label>
+                                <div class="days-grid">
+                                    <label class="day-checkbox">
+                                        <input type="checkbox" value="mon"> Mon
+                                    </label>
+                                    <label class="day-checkbox">
+                                        <input type="checkbox" value="tue"> Tue
+                                    </label>
+                                    <label class="day-checkbox">
+                                        <input type="checkbox" value="wed"> Wed
+                                    </label>
+                                    <label class="day-checkbox">
+                                        <input type="checkbox" value="thu"> Thu
+                                    </label>
+                                    <label class="day-checkbox">
+                                        <input type="checkbox" value="fri"> Fri
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div id="monthlyOptions" class="recurring-monthly" style="display: none;">
+                                <label>Repeat on:</label>
+                                <select>
+                                    <option value="same-date">Same date each month</option>
+                                    <option value="same-day">Same day each month (e.g., 3rd Monday)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Until</label>
+                                <input type="date" id="recurringUntil">
+                            </div>
+                        </div>
+                    </div>
                     <div class="duration-select">
                         <label>Duration</label>
                         <select id="duration">
