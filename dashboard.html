@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPNORM Dashboard</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="#"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="#"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="#"><i class="fas fa-message"></i> Messages</a>
+        </div>
+        <div class="nav-profile">
+            <img src="https://ui-avatars.com/api/?name=Roberto+Sosa&background=182834&color=fff" alt="Profile" class="profile-pic">
+            <div class="profile-menu">
+                <a href="account-settings.html" class="profile-name">Roberto Sosa</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <section class="welcome-section">
+            <h1>Welcome back, Roberto!</h1>
+            <p>What would you like to do today?</p>
+        </section>
+
+        <section class="quick-actions">
+            <div class="action-card">
+                <i class="fas fa-search"></i>
+                <h3>Find a Space</h3>
+                <p>Search and book available spaces</p>
+                <a href="spaces.html" class="card-link"></a>
+            </div>
+            <div class="action-card">
+                <i class="fas fa-plus-circle"></i>
+                <h3>Publish Space</h3>
+                <p>List your space for rent</p>
+            </div>
+            <div class="action-card">
+                <i class="fas fa-history"></i>
+                <h3>My Activity</h3>
+                <p>View bookings and listings</p>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <!-- My Bookings Section -->
+            <section class="dashboard-section">
+                <h2>My Bookings</h2>
+                <div class="booking-list">
+                    <div class="booking-card">
+                        <div class="booking-date">
+                            <span class="day">15</span>
+                            <span class="month">MAY</span>
+                        </div>
+                        <div class="booking-details">
+                            <h3>Modern Suite Space</h3>
+                            <p><i class="fas fa-clock"></i> 09:00 AM - 05:00 PM</p>
+                            <p><i class="fas fa-location-dot"></i> Central Business District</p>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="button secondary">Cancel</button>
+                            <button class="button">Modify</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Properties Section -->
+            <section class="dashboard-section">
+                <h2>My Spaces</h2>
+                <div class="property-list">
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Rental Space">
+                        <div class="property-info">
+                            <h3>Executive Space</h3>
+                            <p><i class="fas fa-location-dot"></i> Financial District</p>
+                            <p class="price">$30/hour</p>
+                            <div class="property-stats">
+                                <span><i class="fas fa-calendar-check"></i> 12 Bookings</span>
+                                <span><i class="fas fa-star"></i> 4.8/5</span>
+                            </div>
+                            <button class="button">Manage Space</button>
+                        </div>
+                    </div>
+                    <button class="add-property-button">
+                        <i class="fas fa-plus"></i>
+                        <span>Add New Space</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // For prototype purposes only
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('This feature is not available in the prototype');
+            });
+        });
+    </script>
+</body>
+</html> 

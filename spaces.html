@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Spaces - EPNORM</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/spaces.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-menu">
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+            <a href="spaces.html" class="active"><i class="fas fa-search"></i> Find Spaces</a>
+            <a href="#"><i class="fas fa-building"></i> My Spaces</a>
+            <a href="#"><i class="fas fa-calendar"></i> My Bookings</a>
+            <a href="#"><i class="fas fa-message"></i> Messages</a>
+        </div>
+        <div class="nav-profile">
+            <img src="https://ui-avatars.com/api/?name=Roberto+Sosa&background=182834&color=fff" alt="Profile" class="profile-pic">
+            <div class="profile-menu">
+                <a href="account-settings.html" class="profile-name">Roberto Sosa</a>
+                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="spaces-main">
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search by location, name, or features...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filters">
+                <select>
+                    <option>Price Range</option>
+                    <option>$0 - $20/hr</option>
+                    <option>$21 - $40/hr</option>
+                    <option>$41+/hr</option>
+                </select>
+                <select>
+                    <option>Capacity</option>
+                    <option>1-4 people</option>
+                    <option>5-10 people</option>
+                    <option>10+ people</option>
+                </select>
+                <select>
+                    <option>Availability</option>
+                    <option>Today</option>
+                    <option>This Week</option>
+                    <option>This Month</option>
+                </select>
+                <button class="filter-button">More Filters</button>
+            </div>
+        </div>
+
+        <div class="spaces-grid">
+            <div class="space-card">
+                <div class="space-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Modern Space">
+                    <span class="space-badge">Available Now</span>
+                </div>
+                <div class="space-details">
+                    <h3>Modern Collaborative Space</h3>
+                    <p class="location"><i class="fas fa-location-dot"></i> Central Business District</p>
+                    <div class="space-features">
+                        <span><i class="fas fa-users"></i> Up to 8 people</span>
+                        <span><i class="fas fa-wifi"></i> High-speed WiFi</span>
+                        <span><i class="fas fa-mug-hot"></i> Coffee Bar</span>
+                    </div>
+                    <div class="space-footer">
+                        <div class="price">$25/hour</div>
+                        <button class="button">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More space cards with different images and details -->
+            <div class="space-card">
+                <div class="space-image">
+                    <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7" alt="Creative Space">
+                    <span class="space-badge">Popular</span>
+                </div>
+                <div class="space-details">
+                    <h3>Creative Studio Space</h3>
+                    <p class="location"><i class="fas fa-location-dot"></i> Arts District</p>
+                    <div class="space-features">
+                        <span><i class="fas fa-users"></i> Up to 6 people</span>
+                        <span><i class="fas fa-palette"></i> Whiteboard Wall</span>
+                        <span><i class="fas fa-couch"></i> Lounge Area</span>
+                    </div>
+                    <div class="space-footer">
+                        <div class="price">$20/hour</div>
+                        <button class="button">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-card">
+                <div class="space-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Executive Space">
+                    <span class="space-badge">Premium</span>
+                </div>
+                <div class="space-details">
+                    <h3>Executive Meeting Space</h3>
+                    <p class="location"><i class="fas fa-location-dot"></i> Financial District</p>
+                    <div class="space-features">
+                        <span><i class="fas fa-users"></i> Up to 12 people</span>
+                        <span><i class="fas fa-tv"></i> 4K Display</span>
+                        <span><i class="fas fa-lock"></i> Private Suite</span>
+                    </div>
+                    <div class="space-footer">
+                        <div class="price">$40/hour</div>
+                        <button class="button">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is verified
+            const isVerified = sessionStorage.getItem('isVerified') === 'true';
+
+            // Add click handlers to all Book Now buttons
+            document.querySelectorAll('.button').forEach(button => {
+                if (button.textContent === 'Book Now') {
+                    button.addEventListener('click', () => {
+                        if (!isVerified) {
+                            if (confirm('Identity verification is required to book spaces. Would you like to verify your identity now?')) {
+                                window.location.href = 'account-settings.html';
+                            }
+                        } else {
+                            alert('This booking feature is not available in the prototype');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

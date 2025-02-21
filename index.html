@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPNORM - Office Rental Platform</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">EPNORM</div>
+        <div class="nav-links">
+            <button class="nav-button" onclick="openLoginModal()">Login</button>
+            <button class="nav-button" onclick="openSignupModal()">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>EPNORM</h1>
+        <p>Your Professional Space, On Demand</p>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Welcome to EPNORM</h2>
+            <p>Find the perfect office space for your needs or rent out your property to professionals</p>
+            
+            <div class="cta-buttons">
+                <button class="button host-button" onclick="redirectToHostSignup()">Become a Host</button>
+                <button class="button guest-button" onclick="redirectToGuestSignup()">Find an Office</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Flexible Booking</h3>
+                <p>Book offices by the hour, day, or week</p>
+            </div>
+            <div class="feature-card">
+                <h3>Secure Payments</h3>
+                <p>Protected transactions through blockchain technology</p>
+            </div>
+            <div class="feature-card">
+                <h3>Verified Users</h3>
+                <p>All hosts and guests are verified for your safety</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-links">
+                    <a href="#" onclick="openForgotPasswordModal()">Forgot Password?</a>
+                </div>
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signupName">Full Name:</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone Number:</label>
+                    <input type="tel" id="signupPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForgotPasswordModal()">&times;</span>
+            <h2>Reset Password</h2>
+            <form id="forgotPasswordForm" onsubmit="handleForgotPassword(event)">
+                <div class="form-group">
+                    <label for="resetEmail">Email:</label>
+                    <input type="email" id="resetEmail" required>
+                </div>
+                <button type="submit" class="button">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal management
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+            // Auto-fill the form for prototype
+            document.getElementById('loginEmail').value = "roberto.sosa@epn.edu.ec";
+            document.getElementById('loginPassword').value = "admin123";
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function openSignupModal() {
+            document.getElementById('signupModal').style.display = 'block';
+            // Auto-fill the form
+            document.getElementById('signupName').value = "Roberto Sosa";
+            document.getElementById('signupEmail').value = "roberto.sosa@epn.edu.ec";
+            document.getElementById('signupPhone').value = "+593987654321";
+            document.getElementById('signupPassword').value = "admin123";
+        }
+
+        function closeSignupModal() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        function openForgotPasswordModal() {
+            closeLoginModal();
+            document.getElementById('forgotPasswordModal').style.display = 'block';
+        }
+
+        function closeForgotPasswordModal() {
+            document.getElementById('forgotPasswordModal').style.display = 'none';
+        }
+
+        // Form handlers
+        function handleLogin(event) {
+            event.preventDefault();
+            // Set default values for prototype
+            document.getElementById('loginEmail').value = "roberto.sosa@epn.edu.ec";
+            document.getElementById('loginPassword').value = "admin123";
+            
+            // Show success message and redirect
+            window.location.href = 'dashboard.html';
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            // Set default values for prototype
+            document.getElementById('signupName').value = "Roberto Sosa";
+            document.getElementById('signupEmail').value = "roberto.sosa@epn.edu.ec";
+            document.getElementById('signupPhone').value = "+593987654321";
+            document.getElementById('signupPassword').value = "admin123";
+
+            // Store user data in sessionStorage
+            const userData = {
+                name: "Roberto Sosa",
+                email: "roberto.sosa@epn.edu.ec",
+                phone: "+593987654321",
+                password: "admin123"
+            };
+            sessionStorage.setItem('pendingUser', JSON.stringify(userData));
+
+            // Redirect to verification page
+            window.location.href = 'verification.html';
+        }
+
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            const email = document.getElementById('resetEmail').value;
+            // Add password reset logic here
+            console.log('Password reset requested for:', email);
+        }
+
+        function redirectToHostSignup() {
+            openSignupModal();
+        }
+
+        function redirectToGuestSignup() {
+            openSignupModal();
+        }
+    </script>
+</body>
+</html> 
